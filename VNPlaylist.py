@@ -1086,7 +1086,7 @@ def GetFShareCred():
 
 
 def LoginOKNoti(user="",lvl=""):
-	header = "[COLOR blue]ASANZO[/COLOR][COLOR lime]chúc bạn xem phim vui vẻ![/COLOR]"
+	header = "[COLOR blue]ASANZO [/COLOR][COLOR lime]chúc bạn xem phim vui vẻ![/COLOR]"
 	message = "[COLOR blue][B]Các chương trình khuyến mãi tại www.asanzo.vn[/B][/COLOR]"
 	xbmc.executebuiltin('Notification("{}", "{}","{}", "")'.format(header, message, "10000"))
 
