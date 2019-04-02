@@ -1086,10 +1086,66 @@ def GetFShareCred():
 
 
 def LoginOKNoti(user="",lvl=""):
-	header = "[COLOR red]FPT [/COLOR][COLOR lime]chúc bạn xem phim vui vẻ![/COLOR]"
-	message = "[COLOR blue][B]www.vtsic.vn[/B][/COLOR]"
+	header = "[COLOR blue]ASANZO[/COLOR][COLOR lime]chúc bạn xem phim vui vẻ![/COLOR]"
+	message = "[COLOR blue][B]Các chương trình khuyến mãi tại www.asanzo.vn[/B][/COLOR]"
 	xbmc.executebuiltin('Notification("{}", "{}","{}", "")'.format(header, message, "10000"))
 
+def download_sub(subtitle,tempdir):
+	if 'subscene.com' in subtitle:
+		'''
+		s = requests.Session()
+		response = s.get(subtitle, headers=headers)
+		sub = re.search(r'<a href=\"(/subtitles/vietnamese.*?)\"', response.text)
+		sub = sub.group(1)
+		subpath = "https://subscene.com" + sub
+		'''
+		subpath = 'http://vietmedia.ddns.net/phude.php?url=%s' % subtitle
+		
+	if 'phudeviet.org' in subtitle:
+		f = urlfetch.get(subtitle)
+		match = re.search(r"(http://phudeviet.org/download/.+?html)", f.body)
+		subpath = match.group(1)
+		f = urlfetch.get(subpath)
+		subpath = f.getheader('location')
+		useragent = ("User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0")
+		headers = {'User-Agent': useragent, 'Referer': subtitle}
+		
+	if not os.path.exists(tempdir):
+		try:
+			xbmcvfs.mkdirs(tempdir)
+			time.sleep(20)
+		except:pass
+	else:
+		for root, dirs, files in os.walk(tempdir, topdown=False):
+			for name in files:
+				try:os.remove(os.path.join(root, name))
+				except:pass
+			for name in dirs:
+				try:os.rmdir(os.path.join(root, name))
+				except:pass
+	
+	
+	tmp_file = os.path.join(tempdir, "phude.zip")
+	
+	try:
+		if os.path.exists(tmp_file):
+			os.remove(tmp_file)
+		tmp_file = os.path.join(tempdir, "phude.zip")
+		r = s.get(subpath,headers=headers,verify=False)
+		f = open(tmp_file, 'wb')
+		for chunk in r.iter_content(chunk_size=512 * 1024):
+                        if chunk:
+                                f.write(chunk)
+                f.close()
+		import zipfile
+		fantasy_zip = zipfile.ZipFile(tmp_file)
+		fantasy_zip.extractall(tempdir)
+		fantasy_zip.close()
+		notify("Đã tải được phụ đề")
+		
+	except:
+		notify('Không tải được phụ đề')
+		pass
 
 def GetFShareUser(cred):
 	user_url = "https://118.69.164.19/api/user/get"
