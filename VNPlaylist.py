@@ -1075,7 +1075,7 @@ def GetFShareCred():
 			dialog = xbmcgui.Dialog()
 			yes = dialog.yesno(
 				'Đăng nhập không thành công!\n',
-				'[COLOR yellow]Nhập VIP Fshare của bạn, nếu chưa có hãy liên hệ [COLOR blue]FPT[/COLOR] để mua Tài khoản Fshare[/COLOR]',
+				'[COLOR yellow]Nhập VIP Fshare của bạn, nếu chưa có hãy liên hệ [COLOR blue]Công ty Cổ phần Viễn thông FPT[/COLOR] để mua Tài khoản Fshare[/COLOR]',
 				yeslabel='OK, nhập ngay',
 				nolabel='Bỏ qua'
 			)
@@ -1086,9 +1086,9 @@ def GetFShareCred():
 
 
 def LoginOKNoti(user="",lvl=""):
-	header = "[COLOR blue]ASANZO [/COLOR][COLOR lime]chúc bạn xem phim vui vẻ![/COLOR]"
-	message = "[COLOR blue][B]Các chương trình khuyến mãi tại www.asanzo.vn[/B][/COLOR]"
-	xbmc.executebuiltin('Notification("{}", "{}","{}", "")'.format(header, message, "10000"))
+	header = "[COLOR blue]Chúc bạn xem phim vui vẻ![/COLOR]"
+	message = "[COLOR blue]Phim miễn phí tại www.asanzo.tv[/COLOR]"
+	xbmc.executebuiltin('Notification("{}", "{}","{}", "")'.format(header, message, "80000", "ftp://tv.vtsic.vn/Asanzo/icon.png"))
 
 
 def GetFShareUser(cred):
