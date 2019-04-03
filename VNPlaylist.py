@@ -1088,7 +1088,7 @@ def GetFShareCred():
 def LoginOKNoti(user="",lvl=""):
 	header = "[COLOR blue]Chúc bạn xem phim vui vẻ![/COLOR]"
 	message = "[COLOR blue]Phim miễn phí tại www.asanzo.tv[/COLOR]"
-	xbmc.executebuiltin('Notification("{}", "{}","{}", "")'.format(header, message, "80000", "ftp://tv.vtsic.vn/Asanzo/icon.png"))
+	xbmc.executebuiltin('Notification("{}", "{}","{}", "")'.format(header, message, "30000", ftp://tv.vtsic.vn/Asanzo/icon.png))
 
 
 def GetFShareUser(cred):
