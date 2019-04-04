@@ -1086,8 +1086,9 @@ def GetFShareCred():
 
 
 def LoginOKNoti(user="",lvl=""):
-	r=urlfetch.get('http://repo.kodi.vn/Phude/Donation.txt')
-	TextBoxes(ADDON_NAME, r.body)
+	header = "[COLOR yellow]CHÚC CÁC BẠN XEM PHIM VUI VẺ[/COLOR]"
+	message = "[COLOR yellow]CHÚNG TÔI LUÔN ĐỒNG HÀNH CÙNG CÁC BẠN VÀ ĐỪNG QUÊN CÁC CHƯƠNG TRÌNH HẤP DẪN TẠI www.asanzo.tv [/COLOR]"
+	xbmc.executebuiltin('Notification("{}", "{}","{}", "")'.format(header, message, "50000"))
 
 
 def GetFShareUser(cred):
