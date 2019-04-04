@@ -1086,8 +1086,8 @@ def GetFShareCred():
 
 
 def LoginOKNoti(user="",lvl=""):
-	header = "[COLOR yellow]CHÚC CÁC BẠN XEM PHIM VUI VẺ[/COLOR]"
-	message = "[COLOR yellow]CHÚNG TÔI LUÔN ĐỒNG HÀNH CÙNG CÁC BẠN VÀ ĐỪNG QUÊN CÁC CHƯƠNG TRÌNH HẤP DẪN TẠI www.asanzo.tv [/COLOR]"
+	header = "[COLOR yellow]CHÚNG TÔI LUÔN ĐỒNG HÀNH CÙNG CÁC BẠN VÀ CHÚC CÁC BẠN XEM PHIM VUI VẺ[/COLOR]"
+	message = "[COLOR yellow]CHƯƠNG TRÌNH HẤP DẪN TẠI www.asanzo.tv : Asanzo vừa đưa ra thông báo về chương trình khuyến mãi hấp dẫn của mình trong năm 2019. Theo đó, tất cả Smart Tivi Asanzo sản xuất từ ngày 20.03.2019 sẽ được khuyến mãi tặng gói truyền hình STV Play– Ứng dụng truyền hình & Giải trí đa nền tảng. Với ứng dụng này, khách hàng sẽ được xem đa dạng với các chương trình giải trí, phim bom tấn đặc sắc, … không giới hạn.[/COLOR]"
 	xbmc.executebuiltin('Notification("{}", "{}","{}", "")'.format(header, message, "50000"))
 
 
