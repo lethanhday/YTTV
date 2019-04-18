@@ -36,7 +36,7 @@ sheet_headers = {
 
 
 def GetSheetIDFromSettings():
-	sid = "1CzW6m07TdutoBZ1azkvpTsDd1fyjc3p-2u4Zs-OYBfc"
+	sid = "1LKu_2ZtkXgfvR1rLNvSHy3x6u7EQ9oaWmPA74IHApQ0"
 	resp, content = http.request(get_fshare_setting("GSheetURL"), "HEAD")
 	try:
 		sid = re.compile("/d/(.+?)/").findall(resp["content-location"])[0]
