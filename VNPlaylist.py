@@ -200,7 +200,7 @@ def getItems(url_path="0", tq="select A,B,C,D,E"):
 			item["path"] = pluginrootpath + "/executebuiltin/-"
 		else:
 			if "spreadsheets/d/" in item["path"]:
-				https://docs.google.com/spreadsheets/d/1LKu_2ZtkXgfvR1rLNvSHy3x6u7EQ9oaWmPA74IHApQ0/edit#gid=0
+				# https://docs.google.com/spreadsheets/d/1LKu_2ZtkXgfvR1rLNvSHy3x6u7EQ9oaWmPA74IHApQ0/edit#gid=0
 				match_cache = re.search('cache=(.+?)($|&)', item["path"])
 				match_passw = re.search('passw=(.+?)($|&)', item["path"])
 
