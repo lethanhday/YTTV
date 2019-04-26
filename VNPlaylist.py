@@ -336,16 +336,16 @@ def PasswordSection(password="0000", path="0", tracking_string="Home"):
 		items = AddTracking(getItems(path))
 		return plugin.finish(items)
 	else:
-		passw_string = plugin.keyboard(heading='Nhập password')
+		passw_string = plugin.keyboard(heading='Nhắn tin cú pháp: <EDU> gửi 0903110367 để nhận Pass')
 		if passw_string == password:
 			passwords[password] = time.time()
 			items = AddTracking(getItems(path))
 			return plugin.finish(items)
 		else:
 			header = "Sai mật khẩu!!!"
-			message = "Mật khẩu không khớp. Không tải được nội dung"
+			message = "Vui Lòng nhắn tin cú pháp: <EDU> gửi 0903110367 để nhận Pass học chương trình từ xa miễn phí."
 			xbmc.executebuiltin('Notification("%s", "%s", "%d", "%s")' %
-			                    (header, message, 10000, ''))
+			                    (header, message, 50000, ''))
 			return plugin.finish()
 
 
@@ -1088,7 +1088,7 @@ def GetFShareCred():
 def LoginOKNoti(user="",lvl=""):
 	header = "[COLOR yellow]   CHÚNG TÔI LUÔN ĐỒNG HÀNH CÙNG CÁC BẠN VÀ CHÚC CÁC BẠN XEM PHIM VUI VẺ[/COLOR]"
 	message = "[COLOR yellow]CHÍNH THỨC RA MẮT QUỸ KHỞI NGHIỆP ASANZO STARTUP FUND, ĐỒNG HÀNH CÙNG SHARK TANK VIỆT NAM MÙA 3 HỖ TRỢ CÁC HOẠT ĐỘNG KHỞI NGHIỆP CỦA THANH NIÊN VIỆT NAM.[/COLOR]"
-	xbmc.executebuiltin('Notification("{}", "{}","{}", "")'.format(header, message, "50000"))
+	xbmc.executebuiltin('Notification("{}", "{}","{}", "")'.format(header, message, 50000, ''))
 
 
 def GetFShareUser(cred):
