@@ -1086,7 +1086,10 @@ def GetFShareCred():
 
 
 def LoginOKNoti(user="",lvl=""):
-	xbmc.executebuiltin('PlayMedia(ftp://tv.vtsic.vn/Asanzo/Startup/StartupEnglish.m3u)')
+	self.stop() #to stop the playback
+    xbmc.executebuiltin('PlayMedia(ftp://tv.vtsic.vn/Asanzo/Startup/StartupEnglish.m3u)')
+    self.Play() #to play the file again after ^^ has finished or it might have to be self.Play(file)
+	
 
 
 def GetFShareUser(cred):
