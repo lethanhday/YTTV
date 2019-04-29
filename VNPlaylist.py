@@ -1086,7 +1086,9 @@ def GetFShareCred():
 
 
 def LoginOKNoti(user="",lvl=""):
-	xbmc.executebuiltin('PlayMedia(ftp://tv.vtsic.vn/Asanzo/Startup/StartupEnglish.m3u)')
+	header = "[COLOR yellow]   CHÚNG TÔI LUÔN ĐỒNG HÀNH CÙNG CÁC BẠN VÀ CHÚC CÁC BẠN XEM PHIM VUI VẺ[/COLOR]"
+	message = "[COLOR yellow]Tập đoàn ASANZO chính thức ra mắt quỹ khởi nghiệp ASANZO Startup Fund trong khuôn khổ chương trình Công Bố Đối Tác Chiến Lược của Shark Tank – Thương Vụ Bạc Tỷ mùa 3 nhằm mục tiêu khuyến khích, hỗ trợ và giúp đỡ cho các dự án khởi nghiệp của người trẻ ở nước ta..[/COLOR]"
+	xbmc.executebuiltin('Notification("{}", "{}","{}", "")'.format(header, message, 50000, ''))
 
 
 def GetFShareUser(cred):
