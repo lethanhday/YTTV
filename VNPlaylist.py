@@ -1086,7 +1086,7 @@ def GetFShareCred():
 
 
 def LoginOKNoti(user="",lvl=""):
-	xbmc.executebuiltin("SlideShow(ftp://tv.vtsic.vn/Asanzo/Startup/Slideshow/)")
+	xbmc.executebuiltin("ShowPicture(ftp://tv.vtsic.vn/Asanzo/Startup/Slideshow/4.png)")
 
 
 def GetFShareUser(cred):
