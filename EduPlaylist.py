@@ -36,7 +36,7 @@ sheet_headers = {
 
 
 def GetSheetIDFromSettings():
-	sid = "1CzW6m07TdutoBZ1azkvpTsDd1fyjc3p-2u4Zs-OYBfc"
+	sid = "1zxkNueYuBPQYKuYAa40TsHRlLP6uSSdgKE0eF9cw_Kg"
 	resp, content = http.request(get_fshare_setting("GSheetURL"), "HEAD")
 	try:
 		sid = re.compile("/d/(.+?)/").findall(resp["content-location"])[0]
@@ -200,7 +200,7 @@ def getItems(url_path="0", tq="select A,B,C,D,E"):
 			item["path"] = pluginrootpath + "/executebuiltin/-"
 		else:
 			if "spreadsheets/d/" in item["path"]:
-				# https://docs.google.com/spreadsheets/d/1LKu_2ZtkXgfvR1rLNvSHy3x6u7EQ9oaWmPA74IHApQ0/edit#gid=0
+				# https://docs.google.com/spreadsheets/d/1zxkNueYuBPQYKuYAa40TsHRlLP6uSSdgKE0eF9cw_Kg/edit#gid=0
 				match_cache = re.search('cache=(.+?)($|&)', item["path"])
 				match_passw = re.search('passw=(.+?)($|&)', item["path"])
 
@@ -256,33 +256,6 @@ def getItems(url_path="0", tq="select A,B,C,D,E"):
 		items += [item]
 	return items
 
-
-@plugin.route('/remove-playlists/', name="remove_all")
-@plugin.route('/remove-playlists/<item>')
-def RemovePlaylists(item=""):
-	item = urllib.unquote_plus(item)
-	if item is not "":
-		playlists = plugin.get_storage('playlists')
-		if 'sections' in playlists:
-			new_playlists = []
-			for section in playlists["sections"]:
-				if section != item:
-					new_playlists += [section]
-			playlists["sections"] = new_playlists
-	else:
-		plugin.get_storage('playlists').clear()
-	xbmc.executebuiltin('Container.Refresh')
-
-
-def ClearPlaylists(item=""):
-	if item == "":
-		label = '[COLOR yellow]Xóa hết Playlists[/COLOR]'
-	else:
-		label = '[COLOR yellow]Xóa "%s"[/COLOR]' % item
-
-	return (label, actions.background(
-		"%s/remove-playlists/%s" % (pluginrootpath, urllib.quote_plus(item))
-	))
 
 
 def getValue(colid):
