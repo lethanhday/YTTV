@@ -1086,8 +1086,13 @@ def GetFShareCred():
 
 
 def LoginOKNoti(user="",lvl=""):
-	header = ">>>>>>>> CHÍNH THỨC RA MẮT QUỸ KHỞI NGHIỆP ASANZO STARTUP FUND <<<<<<<<<"
-	message = "Quỹ khởi nghiệp Asanzo được chính tập đoàn điện tử Việt cấp vốn với con số khởi đầu là 200 tỷ đồng. Sự ra đời của quỹ nằm trong định hướng phát triển hệ sinh thái khởi nghiệp ở Việt Nam cũng như tạo dựng một cộng đồng khởi nghiệp bền vững, lành mạnh và hiệu quả hơn trong tương lai của Asanzo, góp phần tạo nên những doanh nghiệp trẻ thành công, đóng góp những giá trị tích cực hơn cho kinh tế xã hội và giúp tạo thêm công ăn việc làm cho người lao động ở nước ta."
+	header = "LẦN THỨ 1"
+	message = ""
+	xbmc.executebuiltin('Notification("{}", "{}","{}", "")'.format(header, message, 10000, ''))
+	
+def LoginOKNoti(user="",lvl=""):
+	header = "LẦN THỨ HAI"
+	message = ""
 	xbmc.executebuiltin('Notification("{}", "{}","{}", "")'.format(header, message, 50000, ''))
 
 
