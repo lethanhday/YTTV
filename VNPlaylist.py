@@ -1086,12 +1086,12 @@ def GetFShareCred():
 
 
 def LoginOKNoti(user="",lvl=""):
-	header = "LẦN THỨ 1"
+	header = "CHÍNH THỨC RA MẮT QUỸ KHỞI NGHIỆP ASANZO STARTUP FUND"
 	message = ""
-	xbmc.executebuiltin('Notification("{}", "{}","{}", "")'.format(header, message, 10000, ''))
+	xbmc.executebuiltin('Notification("{}", "{}","{}", "")'.format(header, message, 20000, ''))
 	
 def LoginOKNoti(user="",lvl=""):
-	header = "LẦN THỨ HAI"
+	header = "Hà Nội, ngày 18 tháng 04 năm 2019, Tập đoàn ASANZO chính thức ra mắt quỹ khởi nghiệp ASANZO Startup Fund trong khuôn khổ chương trình Công Bố Đối Tác Chiến Lược của Shark Tank – Thương Vụ Bạc Tỷ mùa 3 nhằm mục tiêu khuyến khích, hỗ trợ và giúp đỡ cho các dự án khởi nghiệp của người trẻ ở nước ta."
 	message = ""
 	xbmc.executebuiltin('Notification("{}", "{}","{}", "")'.format(header, message, 50000, ''))
 
