@@ -336,14 +336,14 @@ def PasswordSection(password="0000", path="0", tracking_string="Home"):
 		items = AddTracking(getItems(path))
 		return plugin.finish(items)
 	else:
-		passw_string = plugin.keyboard(heading='Nhắn tin cú pháp: <EDU> gửi 0903110367 để nhận Pass')
+		passw_string = plugin.keyboard(heading='Nhắn tin cú pháp: <24h> gửi 0903110367')
 		if passw_string == password:
 			passwords[password] = time.time()
 			items = AddTracking(getItems(path))
 			return plugin.finish(items)
 		else:
-			header = "Sai mật khẩu!!!"
-			message = "Vui Lòng nhắn tin cú pháp: <EDU> gửi 0903110367 để nhận Pass học chương trình từ xa miễn phí."
+			header = "Sai mật khẩu!!! Vui Lòng nhắn tin cú pháp: <24h> gửi 0903110367 để nhận Pass xem phim 24h < 01 tin nhắn 15.000 vnđ."
+			message = ""
 			xbmc.executebuiltin('Notification("%s", "%s", "%d", "%s")' %
 			                    (header, message, 50000, ''))
 			return plugin.finish()
