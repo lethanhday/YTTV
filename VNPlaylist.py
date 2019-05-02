@@ -1090,10 +1090,13 @@ def LoginOKNoti(user="",lvl=""):
 	message = ""
 	xbmc.executebuiltin('Notification("{}", "{}","{}", "")'.format(header, message, 50000, ''))
 	
-def LoginOKNoti1(user="",lvl=""):
-	header = "Hà Nội, ngày 18 tháng 04 năm 2019, Tập đoàn ASANZO chính thức ra mắt quỹ khởi nghiệp ASANZO Startup Fund trong khuôn khổ chương trình Công Bố Đối Tác Chiến Lược của Shark Tank – Thương Vụ Bạc Tỷ mùa 3 nhằm mục tiêu khuyến khích, hỗ trợ và giúp đỡ cho các dự án khởi nghiệp của người trẻ ở nước ta."
-	message = ""
-	xbmc.executebuiltin('Notification("{}", "{}","{}", "")'.format(header, message, 20000, ''))
+def notify(message='', header=None, time=80000, image=None):
+  	if header is None:
+  		header = ADDON_NAME
+  	if image is None:
+  		path = xbmc.translatePath(xbmcaddon.Addon().getAddonInfo('path')).decode("utf-8")
+    	image = xbmc.translatePath(os.path.join(path, "ftp://tv.vtsic.vn/Asanzo/KTKTBD.png"))
+  	xbmc.executebuiltin('Notification("%s", "%s", "%d", "%s")' % (header, message, time, image))
 
 
 def GetFShareUser(cred):
