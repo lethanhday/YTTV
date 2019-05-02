@@ -1086,19 +1086,10 @@ def GetFShareCred():
 
 
 def LoginOKNoti(user="",lvl=""):
-	header = "CHÍNH THỨC RA MẮT QUỸ KHỞI NGHIỆP ASANZO STARTUP FUND"
+	header = ""
 	message = ""
 	xbmc.executebuiltin('Notification("{}", "{}","{}", "")'.format(header, message, 50000, ''))
 	
-def notify(message='', header=None, time=80000, image=None):
-  	if header is None:
-  		header = ADDON_NAME
-  	if image is None:
-  		path = xbmc.translatePath(xbmcaddon.Addon().getAddonInfo('path')).decode("utf-8")
-    	image = xbmc.translatePath(os.path.join(path, "ftp://tv.vtsic.vn/Asanzo/KTKTBD.png"))
-  	xbmc.executebuiltin('Notification("%s", "%s", "%d", "%s")' % (header, message, time, image))
-
-
 def GetFShareUser(cred):
 	user_url = "https://118.69.164.19/api/user/get"
 	headers = {
