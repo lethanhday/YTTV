@@ -25,8 +25,8 @@ addons_folder = xbmc.translatePath('special://home/addons')
 image = xbmc.translatePath(os.path.join(path, "icon.png"))
 
 plugin = Plugin()
-addon          = xbmcaddon.Addon("plugin.video.vtsic.vn")
-pluginrootpath = "plugin://plugin.video.vtsic.vn"
+addon          = xbmcaddon.Addon("plugin.video.diamond.vn")
+pluginrootpath = "plugin://plugin.video.diamond.vn"
 http = httplib2.Http(cache, disable_ssl_certificate_validation=True)
 query_url = "https://docs.google.com/spreadsheets/d/{sid}/gviz/tq?gid={gid}&headers=1&tq={tq}"
 sheet_headers = {
@@ -36,7 +36,7 @@ sheet_headers = {
 
 
 def GetSheetIDFromSettings():
-	sid = "1CzW6m07TdutoBZ1azkvpTsDd1fyjc3p-2u4Zs-OYBfc"
+	sid = "1ecrRWJjHJ5nBdoJzbI7qwFtYt3bKu8AkjrWISPnrvSI"
 	resp, content = http.request(get_fshare_setting("GSheetURL"), "HEAD")
 	try:
 		sid = re.compile("/d/(.+?)/").findall(resp["content-location"])[0]
@@ -178,9 +178,9 @@ def getItems(url_path="0", tq="select A,B,C,D,E"):
 		if "plugin://" in item["path"]:
 			if "install-repo" in item["path"]:
 				item["is_playable"] = False
-			elif re.search("plugin.video.vtsic.vn/(.+?)/.+?\://", item["path"]):
+			elif re.search("plugin.video.diamond.vn/(.+?)/.+?\://", item["path"]):
 				match = re.search(
-					"plugin.video.vtsic.vn(/.+?/).+?\://", item["path"])
+					"plugin.video.diamond.vn(/.+?/).+?\://", item["path"])
 				tmp = item["path"].split(match.group(1))
 				tmp[-1] = urllib.quote_plus(tmp[-1])
 				item["path"] = match.group(1).join(tmp)
@@ -200,7 +200,7 @@ def getItems(url_path="0", tq="select A,B,C,D,E"):
 			item["path"] = pluginrootpath + "/executebuiltin/-"
 		else:
 			if "spreadsheets/d/" in item["path"]:
-				# https://docs.google.com/spreadsheets/d/1LKu_2ZtkXgfvR1rLNvSHy3x6u7EQ9oaWmPA74IHApQ0/edit#gid=0
+				# https://docs.google.com/spreadsheets/d/1ecrRWJjHJ5nBdoJzbI7qwFtYt3bKu8AkjrWISPnrvSI/edit#gid=0
 				match_cache = re.search('cache=(.+?)($|&)', item["path"])
 				match_passw = re.search('passw=(.+?)($|&)', item["path"])
 
@@ -697,7 +697,7 @@ def AddTracking(items):
 	'''
 
 	for item in items:
-		if "plugin.video.vtsic.vn" in item["path"]:
+		if "plugin.video.diamond.vn" in item["path"]:
 			tmps = item["path"].split("?")
 			if len(tmps) == 1:
 				tail = ""
