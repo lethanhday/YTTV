@@ -1,2 +1,2 @@
 import xbmc
-'PlayMedia(pvr://channels/tv/All channels/pvr.hts_456169418.pvr)'
+xbmc.executebuiltin("Skin.ResetSettings")
