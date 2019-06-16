@@ -1,1 +1,1 @@
-PlayMedia(pvr://channels/tv/All channels/pvr.hts_456169418.pvr)
+'PlayMedia(pvr://channels/tv/All channels/pvr.hts_456169418.pvr)'
