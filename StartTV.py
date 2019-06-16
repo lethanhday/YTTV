@@ -1,0 +1,3 @@
+import xbmc
+
+xbmc.executebuiltin('PlayMedia(pvr://channels/tv/All channels/pvr.hts_456169418.pvr)')
