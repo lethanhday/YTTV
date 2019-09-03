@@ -1075,8 +1075,8 @@ def GetFShareCred():
 			dialog = xbmcgui.Dialog()
 			yes = dialog.yesno(
 				'Đăng nhập không thành công!\n',
-				'[COLOR yellow]Nhập VIP Fshare của bạn, nếu chưa có hãy liên hệ [COLOR blue]Công ty Cổ phần Viễn thông FPT[/COLOR] để mua Tài khoản Fshare[/COLOR]',
-				yeslabel='OK, nhập ngay',
+				'[COLOR yellow]Hệ thống đang quá tải, liên hệ [COLOR blue]Lê Thanh[/COLOR] để được hổ trợ KT[/COLOR]',
+				yeslabel='OK',
 				nolabel='Bỏ qua'
 			)
 			if yes:
